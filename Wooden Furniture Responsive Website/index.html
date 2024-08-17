@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="main.css">
+        <title>Responsive Navbar</title>
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="#">WoodLand Furniture</a></div>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">PortFolio</a></li>
+                    <li><a href="#contact">Content</a></li>
+                </ul>
+                <a href="#" class="action_btn">Get Started</a>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown_menu ">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">PortFolio</a></li>
+                <li><a href="#contact">Content</a></li>
+                <a href="#" class="action_btn">Get Started</a>
+            </div>
+        </header>
+
+        <main>
+            <div class = "container">
+            <section id="hero" class="hero">
+                <h1>Welcome</h1>
+                <p>
+                    Welcome to WoodLand Furniture, where we bring style and comfort to your space. <br>
+                    Our furniture is crafted with care, blending beauty and practicality to fit your lifestyle. <br>
+                    Whether you're decorating your home or office, we offer pieces that make every room feel special.<br> 
+                    Discover furniture that’s made to be loved, designed just for you.
+                </p>
+            </section>
+        <!--About Section-->
+
+            <section id="about" class="about">
+                <h1>About Us</h1>
+                <p>
+                    Welcome to WoodLand Furnitures, where craftsmanship meets comfort. <br>
+                    We believe that furniture is more than just pieces that fill a room it’s the art of creating spaces that tell stories. <br>
+                    Our passion lies in designing and crafting furniture that brings warmth, style, and functionality to every home. <br>
+                    From timeless classics to modern innovations, each piece we create is a blend of quality materials and expert craftsmanship.<br> 
+                    At WoodLand Furnitures, we’re committed to turning your house into a home, one beautiful piece of furniture at a time.
+                </p>
+                <a href="#hero" class="action_btn">Home</a>
+            </section>
+        <!--PortFolio Section--> 
+        <section id="portfolio" class="portfolio">
+            <h1>Our Furniture Collection</h1>
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://i.pinimg.com/736x/bf/9e/b3/bf9eb3457ba5cb8941595dde213e9528.jpg" alt="Furniture Image 1">
+                    <h3>Woden Lamp</h3>
+                    <p> The Woden Lamp features a sleek, modern design with adjustable light settings for versatile illumination. </p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/21/16/bb/2116bb45622572d19550c876d9143777.jpg" alt="Furniture Image 1">
+                    <h3>Woden Dining Table</h3>
+                    <p> Sleek, modern design crafted from hight-quality wood, perfect for any contemporary dining space. </p>
+                </div>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/5c/fd/eb/5cfdebf5f080501a46facfe164687b60.jpg" alt="Furniture Image 1">
+                    <h3>Woden Light</h3>
+                    <p> A minimalist, modern lighting solution with a sleek design and warm illumination. </p>
+                </div>
+                 
+            </div>
+            <a href="#hero" class="action_btn">Home</a>
+        </section>
+         
+        <!--Contact Section-->
+        <section id="contact" class="contact">
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Name</label>
+                        <input type="text" id="subject" name="subject" placeholder="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <input type="message" id="message" name="message" placeholder="Your message" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    
+                </form>
+            </div>   
+            <a href="#hero" class="action_btn">Home</a>     
+        </section>
+    </div>
+        </main>
+
+        <script>
+            const toggleBtn =document.querySelector('.toggle_btn')
+            const toggleBtnIcon =document.querySelector('.toggle_btn i')
+            const dropDownMenu =document.querySelector('.dropdown_menu')
+
+            toggleBtn.onclik = function() {
+                dropDownMenu.classList.toggle('open')
+                const isOpen = dropDownMenu.classList.contains('open')
+
+                toggleBtnIcon.classList = isOpen
+                ?'fa-solid fa-xmark'
+                :'fa-solid fa-bars'
+            }
+        </script>
+    </body>
+</html>
