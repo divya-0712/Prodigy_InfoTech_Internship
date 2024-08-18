@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <link rel="stylesheet" href="watch.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="watch">
+            <div class="outer-circle">
+                <div class="inner-circle">
+                    <span class="text minute">0 :</span>
+                    <span class="text sec">&nbsp; 0 :</span>
+                    <span class="text msec">&nbsp; 0</span>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button class="button reset">Reset</button>
+                <button class="button play">Play</button>
+                <button class="button lap">Lap</button>
+            </div>
+            <div class="extra-buttons">
+                <button class="button lap-clear-button hidden">Clear All</button>
+                
+            </div>
+            <ul class="laps"> </ul> 
+        </div>
+    </div>
+
+    <script>
+        const playButton = document.getElementsByClassName("play")[0];
+        const lapButton = document.getElementsByClassName("lap")[0];
+        const resetButton = document.getElementsByClassName("reset")[0];
+        const clearButton = document.getElementsByClassName("lap-clear-button")[0];
+        const newButton1 = document.getElementsByClassName("new-button1")[0];
+        const newButton2 = document.getElementsByClassName("new-button2")[0];
+        const newButton3 = document.getElementsByClassName("new-button3")[0];
+        const minute = document.getElementsByClassName("minute")[0];
+        const second = document.getElementsByClassName("sec")[0];
+        const centiSecond = document.getElementsByClassName("msec")[0];
+        const laps = document.querySelector(".laps");
+        const bg = document.getElementsByClassName("outer-circle")[0];
+
+        let isPlay = false;
+        let secCounter = 0;
+        let minCounter = 0;
+        let centiCounter = 0;
+        let lapItem = 0;
+        let min;
+        let sec;
+        let centiSec;
+
+        const toggleButton = () => {
+            lapButton.classList.remove("hidden");
+            resetButton.classList.remove("hidden");
+            clearButton.classList.remove("hidden");
+        }
+
+        const play = () => {
+            if (!isPlay) {
+                playButton.innerHTML = 'Pause';
+                min = setInterval(() => {
+                    minute.innerHTML = `${++minCounter} :`;
+                }, 60 * 1000);
+                sec = setInterval(() => {
+                    if (secCounter === 60) {
+                        secCounter = 0;
+                    }
+                    second.innerHTML = `&nbsp;${++secCounter} :`;
+                }, 1000);
+                centiSec = setInterval(() => {
+                    if (centiCounter === 100) {
+                        centiCounter = 0;
+                    }
+                    centiSecond.innerHTML = `&nbsp;${++centiCounter}`;
+                }, 10);
+                isPlay = true;
+            } else {
+                playButton.innerHTML = 'Play';
+                clearInterval(min);
+                clearInterval(sec);
+                clearInterval(centiSec);
+                isPlay = false;
+                bg.classList.remove("animation-bg");
+            }
+        }
+
+        const reset = () => {
+            clearInterval(min);
+            clearInterval(sec);
+            clearInterval(centiSec);
+            isPlay = false;
+            playButton.innerHTML = 'Play';
+            minute.innerHTML = '0 :';
+            second.innerHTML = '&nbsp;0 :';
+            centiSecond.innerHTML = '&nbsp;0';
+            secCounter = 0;
+            minCounter = 0;
+            centiCounter = 0;
+            lapItem = 0;
+            laps.innerHTML = '';
+            toggleButton();
+        }
+
+        const lap = () => {
+            if (isPlay) {
+                const li = document.createElement("li");
+                const number = document.createElement("span");
+                const timeStamp = document.createElement("span");
+
+                li.setAttribute("class", "lap-item");
+                number.setAttribute("class", "number");
+                timeStamp.setAttribute("class", "time-stamp");
+
+                number.innerText = `#${++lapItem}`;
+                timeStamp.innerHTML = `${minCounter} : ${secCounter} : ${centiCounter}`;
+
+                li.append(number, timeStamp);
+                laps.append(li);
+
+                clearButton.classList.remove("hidden");
+            }
+        }
+
+        const clearAll = () => {
+            laps.innerHTML = '';
+            clearButton.classList.add("hidden");
+            lapItem = 0;
+        }
+
+        playButton.addEventListener("click", play);
+        resetButton.addEventListener("click", reset);
+        lapButton.addEventListener("click", lap);
+        clearButton.addEventListener("click", clearAll);
+
+        // Add event listeners for new buttons (you can customize functionality)
+        newButton1.addEventListener("click", () => alert("Button 1 clicked"));
+        newButton2.addEventListener("click", () => alert("Button 2 clicked"));
+        newButton3.addEventListener("click", () => alert("Button 3 clicked"));
+    </script>
+</body>
+</html>
