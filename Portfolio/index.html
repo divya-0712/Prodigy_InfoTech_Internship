@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divya Mendagudale - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+                <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Work Experience</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="home-section">
+        <div class="hero">
+            <h1 class="animate__animated animate__fadeInDown">Hello, I'm Divya Mendagudale</h1>
+            <p class="animate__animated animate__fadeInUp">Web Developer | Front-End Developer | IT Engineer</p>
+            <img src="img.jpeg" alt="Divya Mendagudale" class="profile-photo animate__animated animate__zoomIn">
+            <a href="#contact" class="cta-button animate__animated animate__pulse animate__infinite">Contact Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2 class="animate__animated animate__fadeInLeft">About Me</h2>
+        <p class="animate__animated animate__fadeInRight">I am a passionate web developer with a strong background in front-end development, skilled in HTML, CSS, JavaScript, and various web technologies. I have experience working on a variety of projects, from CRUD applications to machine learning-based web solutions.</p>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <h2 class="animate__animated animate__fadeInLeft">Skills</h2>
+        <ul class="animate__animated animate__fadeInRight">
+            <li><i class="fas fa-laptop-code"></i> Programming Languages: Java, C, C++, Python (Basic)</li>
+            <li><i class="fas fa-code"></i> Web Technologies: HTML, CSS, Bootstrap, JavaScript</li>
+            <li><i class="fas fa-database"></i> Databases: MySQL, MongoDB</li>
+            <li><i class="fas fa-book"></i> Core Subjects: Data Structures and Algorithms, Operating Systems</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <h2 class="animate__animated animate__fadeInLeft">Projects</h2>
+        <div class="project animate__animated animate__fadeInUp">
+            <h3>CRUD Application</h3>
+            <p>Developed a robust CRUD (Create, Read, Update, and Delete) application utilizing HTML, CSS, and Bootstrap 5 for the frontend, and Java Servlet for the backend, with MongoDB as the database.</p>
+        </div>
+        <div class="project animate__animated animate__fadeInUp">
+            <h3>Book Recommendation System (ML Based)</h3>
+            <p>Developed a dynamic web application for book recommendations, to suggest personalized book choices to users based on their preferences and past interactions.</p>
+        </div>
+        <div class="project animate__animated animate__fadeInUp">
+            <h3>Intelligent Real Estate Assistant Website</h3>
+            <p>Crafted an innovative Real Estate Assistant website offering advanced features such as price prediction, house recommendation, and a chatbot interface.</p>
+        </div>
+    </section>
+
+    <section id="education" class="education-section">
+        <h2 class="animate__animated animate__fadeInLeft">Education</h2>
+        <p class="animate__animated animate__fadeInRight">Bharati Vidyapeeth’s College Of Engineering For Women, Pune (SPPU) | 2020-2024</p>
+        <p class="animate__animated animate__fadeInRight">Bachelor of Engineering (B.E) | Information Technology | SGPA: 7.90 | CGPA: 7.47</p>
+    </section>
+
+    <section id="experience" class="experience-section">
+        <h2 class="animate__animated animate__fadeInLeft">Work Experience</h2>
+        <p class="animate__animated animate__fadeInRight">WorInWell | Front-End Web Developer (01st Apr, 2023 – 15th May, 2023)</p>
+        <p class="animate__animated animate__fadeInRight">Developed and maintained user-friendly front-end web applications facilitating appointment scheduling with healthcare professionals. Utilized Excel Sheet database for efficient data management and retrieval.</p>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2 class="animate__animated animate__fadeInLeft">Contact Me</h2>
+        <form onsubmit="return validateForm()">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" class="animate__animated animate__fadeInRight"><br><br>
+            
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" class="animate__animated animate__fadeInRight"><br><br>
+            
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" class="animate__animated animate__fadeInRight"></textarea><br><br>
+            
+            <button type="submit" class="cta-button animate__animated animate__fadeInUp">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Divya Mendagudale. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
