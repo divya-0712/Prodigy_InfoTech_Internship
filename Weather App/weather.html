@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Static Elements -->
+    <div class="sun"></div>
+    <div class="static-cloud"></div>
+
+    <!-- Animated Cloud and Rain Elements -->
+    <div class="cloud"></div>
+    <div class="cloud" style="animation-delay: 10s;"></div>
+    <div class="cloud" style="animation-delay: 20s;"></div>
+    <div class="cloud" style="animation-delay: 30s;"></div>
+
+    <!-- Generate multiple rain drops -->
+    <div class="rain"></div>
+    <div class="rain" style="left: 25%; animation-delay: 0.2s;"></div>
+    <div class="rain" style="left: 45%; animation-delay: 0.4s;"></div>
+    <div class="rain" style="left: 65%; animation-delay: 0.6s;"></div>
+    <div class="rain" style="left: 85%; animation-delay: 0.8s;"></div>
+    <div class="rain" style="left: 15%; animation-delay: 1s;"></div>
+    <div class="rain" style="left: 35%; animation-delay: 1.2s;"></div>
+    <div class="rain" style="left: 55%; animation-delay: 1.4s;"></div>
+
+    <!-- Main Container for Weather App -->
+    <div class="container">
+        <h1>Weather App</h1>
+        <div class="input-section">
+            <input type="text" id="location-input" placeholder="Enter city or use your location">
+            <button onclick="getWeatherByInput()">Get Weather</button>
+            <button onclick="getWeatherByLocation()">Use My Location</button>
+        </div>
+        <div class="weather-card">
+            <div class="card-header">
+                <span id="location">Location</span>
+                <span id="date">Date</span>
+            </div>
+            <div class="card-body">
+                <div class="temp" id="temp">Temperature</div>
+                <div class="description" id="description">Description</div>
+            </div>
+            <div class="card-footer">
+                <span id="humidity">Humidity</span>
+                <span id="wind">Wind Speed</span>
+            </div>
+        </div>
+        <div class="weather-info" id="weather-info"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
